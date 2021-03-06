@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "base.html" %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+{% block page_content %}
+<h2>Registros de "mes" de "ano"</h2>
+{% for registro in registros %}
+    <div class="list-group">
+        <a href="{% url 'registro_detalhado' registro.id %}" class="list-group-item list-group-item-action">{{ registro.date }}</a>
+    </div>
+{% endfor %}
+{% endblock %}
+    
+</body>
+</html>
